@@ -20,10 +20,10 @@ import java.util.Map;
  *         bbbbbcccdf
  * Output: bbbbbcccd
  * 
- * Input : c
+ * Input:  c
  * Output: c
  * 
- * Input : a
+ * Input:  a
  *         a
  *         c
  * Output: a
@@ -32,7 +32,7 @@ import java.util.Map;
  *         cba
  * Output: <empty string>
  * 
- * Input : a
+ * Input:  a
  * Output: a
  * </pre>
  */
