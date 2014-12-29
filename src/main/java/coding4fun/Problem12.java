@@ -3,6 +3,7 @@ package coding4fun;
 /**
  * Determine if the binary representation of a positive integer is a palindrome.
  * 
+ * <pre>
  * Input: 1 --> 1 in binary
  * Output: true
  * 
@@ -23,6 +24,7 @@ package coding4fun;
  * 
  * Input: 13 --> 1101 in binary
  * Output: false
+ * </pre>
  */
 public class Problem12 {
     private static boolean isBinaryPalindrome(int x) {
