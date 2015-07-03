@@ -3,6 +3,7 @@ package coding4fun;
 /**
  * Invert a binary tree.
  * 
+ * <pre>
  * Input:
  *        1
  *       / \
@@ -20,6 +21,7 @@ package coding4fun;
  *        5   4
  *         \
  *          6
+ * </pre>
  */
 public class Problem16 {
     private static class Node {
