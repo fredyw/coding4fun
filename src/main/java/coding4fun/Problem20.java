@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.stream.Collectors;
 
 /**
- * Find the relative path from a given source to the given destination.
+ * Build a relative path from the given source to the given destination.
  * 
  * For simplicity, assume that the file path separator is always /
  * 
