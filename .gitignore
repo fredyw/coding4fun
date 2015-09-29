@@ -5,3 +5,6 @@ bin
 build
 .gradle
 *.swp
+*.iml
+*.ipr
+*.iws
