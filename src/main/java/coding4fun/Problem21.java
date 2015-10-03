@@ -21,6 +21,9 @@ import java.util.List;
  */
 public class Problem21 {
     private static List<String> generate(List<String> list) {
+        if (list.size() == 1) {
+            return list;
+        }
         List<String> result = new ArrayList<>();
         for (int i = 0; i < list.size()-1; i++) {
             List<String> left = generate(list.subList(0, i+1));
@@ -30,9 +33,6 @@ public class Problem21 {
                     result.add("(" + l + r + ")");
                 }
             }
-        }
-        if (result.isEmpty()) {
-            result.addAll(list);
         }
         return result;
     }
