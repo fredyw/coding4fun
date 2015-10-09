@@ -20,7 +20,7 @@ import java.util.List;
  * </pre>
  */
 public class Problem21 {
-    private static List<String> generate(List<String> list) {
+    public static List<String> generate(List<String> list) {
         if (list.size() == 1) {
             return list;
         }
