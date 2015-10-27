@@ -7,7 +7,8 @@ import java.util.stream.Collectors;
  * Build a relative path from the given source to the given destination.
  * 
  * For simplicity, assume that the file path separator is always /
- * 
+ *
+ * <pre>
  * Input:
  *   - Source     : /a/b/c/d/e
  *   - Destination: /a/b/f/x/y/z
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
  *   - Source     : /a/b/c
  *   - Destination: /a/b/c
  * Output: c
+ * </pre>
  */
 public class Problem20 {
     public static String getRelativePath(String src, String dest) {
