@@ -6,20 +6,27 @@ import java.util.Arrays;
  * Write an algorithm to perform a Tetris rotation.
  */
 public class Problem24 {
-    public static void rotate(char[][] block) {
-        char[][] aux = new char[block.length][];
-        for (int row = 0; row < block.length; row++) {
-            aux[row] = new char[block[row].length];
-            for (int col = 0; col < block[row].length; col++) {
-                aux[row][col] = block[row][col];
+    public static char[][] rotate(char[][] block) {
+        int rowSize = block.length;
+        int colSize = block[0].length;
+
+        // tranpose the matrix
+        char[][] result = new char[colSize][rowSize];
+        for (int i = 0; i < rowSize; i++) {
+            for (int j = 0; j < colSize; j++) {
+                result[j][i] = block[i][j];
+            }
+        }
+        // reverse the rows
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0, k = result[i].length - 1; j < result[i].length / 2; j++, k--) {
+                char tmp = result[i][k];
+                result[i][k] = result[i][j];
+                result[i][j] = tmp;
             }
         }
 
-        for (int row = 0; row < block.length; row++) {
-            for (int col = 0; col < block[row].length; col++) {
-                // TODO
-            }
-        }
+        return result;
     }
 
     private static void print(char[][] block) {
@@ -33,17 +40,17 @@ public class Problem24 {
         char[][] block = new char[][]{
             {' ', ' ', ' '},
             {'*', '*', '*'},
-            {' ', '*', ' '},
+            {' ', ' ', '*'},
         };
         print(block);
 
-        rotate(block);
+        block = rotate(block);
         print(block);
 
-        rotate(block);
+        block = rotate(block);
         print(block);
 
-        rotate(block);
+        block = rotate(block);
         print(block);
     }
 }
