@@ -7,9 +7,9 @@ package coding4fun;
  * <pre>
  * Input  : [1, 3, 5, 7, 9, 11]
  * Outputs: sumRange(1, 4) --> 24
- *         sumRange(1, 1) --> 3
- *         sumRange(0, 5) --> 36
- *         sumRange(0, 0) --> 1
+ *          sumRange(1, 1) --> 3
+ *          sumRange(0, 5) --> 36
+ *          sumRange(0, 0) --> 1
  * </pre>
  */
 public class Problem28 {
