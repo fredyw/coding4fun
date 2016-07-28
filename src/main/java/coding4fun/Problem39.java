@@ -1,7 +1,29 @@
 package coding4fun;
 
 /**
+ * Find the maximum binary search subtree from a given binary tree.
  *
+ * <pre>
+ * Input:
+ *       1
+ *      / \
+ *     5   3
+ *    / \   \
+ *   2   9   8
+ *      / \
+ *     7  12
+ *    / \   \
+ *   10  9  13
+ *  /       /
+ * 6       15
+ *        /  \
+ *       4   18
+ *
+ * Output: 3
+ *         subtree: 15
+ *                 /  \
+ *                4   18
+ * </pre>
  */
 public class Problem39 {
     private static class Node {
@@ -79,7 +101,6 @@ public class Problem39 {
 
     private static int maxBST(Node root) {
         if (isBST(root)) {
-            System.out.println("root: " + root + " --> " + size(root));
             return size(root);
         }
         return Math.max(maxBST(root.left), maxBST(root.right));
