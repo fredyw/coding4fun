@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Find the maximum subtree from a given binary tree where the subtree has the following
+ * Find the maximum subset of a tree from a given binary tree where the subset has the following
  * property:
- * 
+ *
  * Left child < parent < right child
  *
  * <pre>
