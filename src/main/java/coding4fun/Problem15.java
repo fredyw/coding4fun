@@ -26,10 +26,10 @@ public class Problem15 {
         List<String> accu2 = new ArrayList<>();
         accu2.add(commitHash2);
         getPaths(commitMap, parentHashes, commitHash2, accu2, paths);
-        return getCommonAncenstor(paths);
+        return getCommonAncestor(paths);
     }
     
-    private static String getCommonAncenstor(List<List<String>> paths) {
+    private static String getCommonAncestor(List<List<String>> paths) {
         int size = Integer.MAX_VALUE;
         for (List<String> path : paths) {
             size = Math.min(size, path.size());
