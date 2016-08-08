@@ -41,64 +41,6 @@ public class Problem39 {
         }
     }
 
-//    private static class Group {
-//        private int group;
-//    }
-//
-//    private static int maxBST(Node root) {
-//        Map<Integer, Integer> groupCount = new HashMap<>();
-//        maxBST(root, new Group(), groupCount, 0);
-//        System.out.println(groupCount);
-//        return 0;
-//    }
-//
-//    private static void maxBST(Node node, Group group, Map<Integer, Integer> groupCount,
-//                               int groupNumber) {
-//        if (node == null) {
-//            return;
-//        }
-//        int newGroupNumber = groupNumber;
-//        int leftGroupNumber = newGroupNumber;
-//        int rightGroupNumber = newGroupNumber;
-//        if (node.left != null && node.right != null) {
-//            if (node.left.value < node.value && node.value < node.right.value) {
-//                if (!groupCount.containsKey(newGroupNumber)) {
-//                    System.out.println("root both: " + node + ", group: " + newGroupNumber);
-//                    groupCount.put(newGroupNumber, 2);
-//                } else {
-//                    groupCount.put(newGroupNumber, groupCount.get(newGroupNumber) + 2);
-//                }
-//            } else {
-//                leftGroupNumber = group.group++;
-//                rightGroupNumber = group.group++;
-//            }
-//        } else if (node.left != null) {
-//            if (node.left.value < node.value) {
-//                if (!groupCount.containsKey(newGroupNumber)) {
-//                    System.out.println("root left: " + node + ", group: " + newGroupNumber);
-//                    groupCount.put(newGroupNumber, 1);
-//                } else {
-//                    groupCount.put(newGroupNumber, groupCount.get(newGroupNumber) + 1);
-//                }
-//            } else {
-//                leftGroupNumber = group.group++;
-//            }
-//        } else if (node.right != null) {
-//            if (node.value < node.right.value) {
-//                if (!groupCount.containsKey(newGroupNumber)) {
-//                    System.out.println("root right: " + node + ", group: " + newGroupNumber);
-//                    groupCount.put(newGroupNumber, 1);
-//                } else {
-//                    groupCount.put(newGroupNumber, groupCount.get(newGroupNumber) + 1);
-//                }
-//            } else {
-//                rightGroupNumber = group.group++;
-//            }
-//        }
-//        maxBST(node.left, group, groupCount, leftGroupNumber);
-//        maxBST(node.right, group, groupCount, rightGroupNumber);
-//    }
-
     private static int maxBST(Node root) {
         if (isBST(root)) {
             return size(root);
