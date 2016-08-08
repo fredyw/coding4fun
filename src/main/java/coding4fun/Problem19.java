@@ -5,17 +5,17 @@ import java.util.List;
 
 /**
  * Generate all combinations of well-formed parentheses.
- * 
+ * <p>
  * <pre>
  * Input: 1
  * Output: ()
- * 
+ *
  * Input: 2
  * Output: (()), ()()
- * 
+ *
  * Input: 3
  * Output: ((())), (()()), (())(), ()(()), ()()()
- * 
+ *
  * Input: 4
  * Output: (((()))), ((()())), ((())()), ((()))(), (()(())), (()()()), (()())(),
  *         (())(()), (())()(), ()((())), ()(()()), ()(())(), ()()(()), ()()()()
@@ -27,20 +27,20 @@ public class Problem19 {
         generate(n, 0, 0, "", parentheses);
         return parentheses;
     }
-    
+
     private static void generate(int n, int nOpen, int nClose, String accu, List<String> result) {
         if (nClose == n) {
             result.add(accu);
             return;
         }
         if (nOpen < n) {
-            generate(n, nOpen+1, nClose, accu + "(", result);
+            generate(n, nOpen + 1, nClose, accu + "(", result);
         }
         if (nOpen > nClose) {
-            generate(n, nOpen, nClose+1, accu + ")", result);
+            generate(n, nOpen, nClose + 1, accu + ")", result);
         }
     }
-    
+
     public static void main(String[] args) {
         System.out.println(generateParentheses(1));
         System.out.println(generateParentheses(2));

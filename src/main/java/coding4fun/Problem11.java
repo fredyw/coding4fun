@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Count the number of triples that sum to 0.
- * 
+ * <p>
  * Input: [2, 8, -25, -3, 10, 4, -7, -10]
  * Output: [-10, 2, 8]
  */
@@ -24,7 +24,7 @@ public class Problem11 {
         }
         return result;
     }
-    
+
     public static void main(String[] args) {
         int[] array = new int[]{2, 8, -25, -3, 10, 4, -7, -10};
         Arrays.sort(array);

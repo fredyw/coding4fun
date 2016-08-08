@@ -9,7 +9,7 @@ package coding4fun;
  *  {"a3", "b3"},
  *  {"a4"}}
  * </pre>
- *  
+ * <p>
  * Print the 2D array in the following order:
  * <pre>
  * Output:
@@ -33,13 +33,13 @@ public class Problem9 {
             col++;
         }
     }
-    
+
     public static void main(String[] args) {
-        String[][] array = new String[][] {
-            new String[] {"a1", "b1", "c1"},
-            new String[] {"a2", "b2", "c2", "d2"},
-            new String[] {"a3", "b3"},
-            new String[] {"a4"}
+        String[][] array = new String[][]{
+            new String[]{"a1", "b1", "c1"},
+            new String[]{"a2", "b2", "c2", "d2"},
+            new String[]{"a3", "b3"},
+            new String[]{"a4"}
         };
         print(array);
     }

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Given a list of characters, generate a possible ways to parenthesize the characters.
- *
+ * <p>
  * <pre>
  * Input : [a, b]
  * Output: [(a, b)]
@@ -25,9 +25,9 @@ public class Problem21 {
             return list;
         }
         List<String> result = new ArrayList<>();
-        for (int i = 0; i < list.size()-1; i++) {
-            List<String> left = generate(list.subList(0, i+1));
-            List<String> right = generate(list.subList(i+1, list.size()));
+        for (int i = 0; i < list.size() - 1; i++) {
+            List<String> left = generate(list.subList(0, i + 1));
+            List<String> right = generate(list.subList(i + 1, list.size()));
             for (String l : left) {
                 for (String r : right) {
                     result.add("(" + l + r + ")");

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Implement Pascal's triangle for a given number.
- *
+ * <p>
  * <pre>
  * Input: 6
  * Output:

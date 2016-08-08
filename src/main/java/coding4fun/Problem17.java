@@ -9,11 +9,12 @@ import java.util.Map;
 public class Problem17 {
     private static final int[][] KEYPAD = new int[4][3];
     private static final Map<String, Long> KEYPAD_MAP = new HashMap<>();
+
     static {
-        KEYPAD[0] = new int[] { 1, 2,  3};
-        KEYPAD[1] = new int[] { 4, 5,  6};
-        KEYPAD[2] = new int[] { 7, 8,  9};
-        KEYPAD[3] = new int[] {-1, 0, -1};
+        KEYPAD[0] = new int[]{1, 2, 3};
+        KEYPAD[1] = new int[]{4, 5, 6};
+        KEYPAD[2] = new int[]{7, 8, 9};
+        KEYPAD[3] = new int[]{-1, 0, -1};
 
         for (int i = 0; i < KEYPAD.length; i++) {
             for (int j = 0; j < KEYPAD[i].length; j++) {
@@ -24,7 +25,7 @@ public class Problem17 {
             }
         }
     }
-    
+
     private static String buildKeyPadKey(int row, int col) {
         return row + "|" + col;
     }
@@ -32,19 +33,19 @@ public class Problem17 {
     private static String buildMemoKey(int number, long value) {
         return number + "|" + value;
     }
-    
+
     public static long getNumPaths(int max, int row, int col) {
         Map<String, Long> memo = new HashMap<>();
         return getNumPaths(max, row, col, 1, memo);
     }
-    
+
     private static long getNumPaths(int max, int row, int col, int num, Map<String, Long> memo) {
         String key = buildKeyPadKey(row, col);
         if (!KEYPAD_MAP.containsKey(key)) {
             return 0;
         }
         if (max == num) {
-            return + 1;
+            return +1;
         }
         long result = 0;
         result += getResult(max, row - 1, col - 2, num + 1, memo);
@@ -74,7 +75,7 @@ public class Problem17 {
             return memo.get(memoKey);
         }
     }
-    
+
     public static void main(String[] args) {
         for (int i = 1; i <= 32; i++) {
             System.out.println(getNumPaths(i, 0, 0));

@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * List all permutations of a given string.
- *
+ * <p>
  * <pre>
  * Input : ABC
  * Output:
@@ -26,12 +26,14 @@ public class Problem32 {
             return;
         }
         for (int i = left; i < right; i++) {
-            char tmp = chars[left];;
+            char tmp = chars[left];
+            ;
             chars[left] = chars[i];
             chars[i] = tmp;
             permutation(chars, left + 1, right);
             // backtrack to revert the original list
-            tmp = chars[left];;
+            tmp = chars[left];
+            ;
             chars[left] = chars[i];
             chars[i] = tmp;
         }

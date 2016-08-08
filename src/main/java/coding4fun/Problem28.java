@@ -3,7 +3,7 @@ package coding4fun;
 /**
  * Given an array, find an algorithm to find the sum of a given range. The sum of different
  * ranges will be called multiple times over the same array.
- *
+ * <p>
  * <pre>
  * Input  : [1, 3, 5, 7, 9, 11]
  * Outputs: sumRange(1, 4) --> 24
@@ -48,7 +48,7 @@ public class Problem28 {
             if (queryStart <= start && queryEnd >= end) {
                 return tree[current];
             }
-            if (queryEnd < start ||  end < queryStart) {
+            if (queryEnd < start || end < queryStart) {
                 return 0;
             }
             int mid = (start + end) / 2;

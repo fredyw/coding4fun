@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Check if a binary tree is a subtree of another binary tree.
- *
+ * <p>
  * <pre>
  * Input:
  * Tree1:

@@ -3,7 +3,7 @@ package coding4fun;
 /**
  * Given an array, find an algorithm to find the minimum element of a given range.
  * The minimum element of different ranges will be called multiple times over the same array.
- *
+ * <p>
  * <pre>
  * Input  : [3, 1, 4, 6, 2, 7]
  * Outputs: minRange(1, 4) --> 1
@@ -49,7 +49,7 @@ public class Problem29 {
             if (queryStart <= start && queryEnd >= end) {
                 return tree[current];
             }
-            if (queryEnd < start ||  end < queryStart) {
+            if (queryEnd < start || end < queryStart) {
                 return Integer.MAX_VALUE;
             }
             int mid = (start + end) / 2;

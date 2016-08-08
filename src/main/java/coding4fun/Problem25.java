@@ -5,7 +5,7 @@ package coding4fun;
  * or diagonal to each other are considered as one count. There is no wrap-around.
  * Cells on the bottom are not adjacent to the top and the left is not adjacent to
  * the right.
- *
+ * <p>
  * <pre>
  * Input:
  * [[1, 0, 0, 1, 0, 0],

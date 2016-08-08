@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Checks is a given tree is a valid binary search tree.
- *
+ * <p>
  * <pre>
  * Input:
  *   10

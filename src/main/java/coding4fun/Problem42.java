@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Find the next permutation in lexicographical order.
- *
+ * <p>
  * <pre>
  * Input : 362541
  * Output: 364125

@@ -8,9 +8,9 @@ import java.util.Queue;
 /**
  * Given a binary search tree, design an algorithm which creates a linked list
  * of all the nodes at each depth.
- * 
+ * <p>
  * (i e , if you have a tree with depth D, you’ll have D linked lists)
- * 
+ * <p>
  * <pre>
  *              (5)
  *             /   \
@@ -19,9 +19,9 @@ import java.util.Queue;
  *         /  \     / \
  *       (2)  (4) (6) (8)
  *       /              \
- *     (1)              (9) 
+ *     (1)              (9)
  * </pre>
- * 
+ * <p>
  * Will return linked lists:
  * <pre>
  * (5) => NULL
@@ -35,20 +35,20 @@ public class Problem1 {
         Node left;
         Node right;
         int value;
-        
+
         @Override
         public String toString() {
             return Integer.toString(value);
         }
     }
-    
+
     private static class BinaryTree {
         Node root;
-        
+
         public void add(int value) {
             root = add(root, value);
         }
-        
+
         Node add(Node node, int value) {
             if (node == null) {
                 Node n = new Node();
@@ -63,22 +63,22 @@ public class Problem1 {
             return node;
         }
     }
-    
+
     private static class NodeDepth {
         int depth;
         Node node;
-        
+
         public NodeDepth(int depth, Node node) {
             this.depth = depth;
             this.node = node;
         }
-        
+
         @Override
         public String toString() {
             return node.toString();
         }
     }
-    
+
     public static Map<Integer, LinkedList<Node>> buildLinkedLists(Node root) {
         Queue<NodeDepth> queue = new LinkedList<>();
         int idx = 0;
@@ -97,9 +97,9 @@ public class Problem1 {
                 queue.add(new NodeDepth(n.depth + 1, n.node.right));
             }
         }
-        return  result;
+        return result;
     }
-    
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.add(5);

@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Implement least common denominator.
- *
+ * <p>
  * <pre>
  * Input : 32 24
  * Output: 96

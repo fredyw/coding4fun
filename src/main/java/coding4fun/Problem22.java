@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Find all the common elements in two sorted lists of numbers.
- *
+ * <p>
  * <pre>
  * Input : [2, 5, 5, 5], [2, 2, 3, 5, 5, 7]
  * Output: [2, 5, 5]

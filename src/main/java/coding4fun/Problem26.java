@@ -7,12 +7,12 @@ import java.util.List;
 /**
  * Given two 1d list, implement an iterator to return their elements alternately.
  * For example, given two 1d lists:
- *
+ * <p>
  * <pre>
  * list1 = [1, 2]
  * list2 = [3, 4, 5, 6]
  * </pre>
- *
+ * <p>
  * By calling next repeatedly until hasNext returns false, the order of elements returned
  * by next should be: [1, 3, 2, 4, 5, 6].
  */

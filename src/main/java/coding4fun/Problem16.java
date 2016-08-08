@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Invert a binary tree.
- * 
+ * <p>
  * <pre>
  * Input:
  *        1
@@ -12,7 +12,7 @@ package coding4fun;
  *    4   5
  *       /
  *      6
- *       
+ *
  * Output:
  *        1
  *       / \
@@ -28,17 +28,17 @@ public class Problem16 {
         private int value;
         private Node left;
         private Node right;
-        
+
         public Node(int value) {
             this.value = value;
         }
-        
+
         @Override
         public String toString() {
             return Integer.toString(value);
         }
     }
-    
+
     private static void invert(Node node) {
         if (node == null) {
             return;
@@ -50,7 +50,7 @@ public class Problem16 {
         node.right = left;
         node.left = right;
     }
-    
+
     public static void main(String[] args) {
         Node root = new Node(1);
         root.left = new Node(2);
@@ -58,7 +58,7 @@ public class Problem16 {
         root.left.left = new Node(4);
         root.left.right = new Node(5);
         root.left.right.left = new Node(6);
-        
+
         invert(root);
         System.out.println(root);
         System.out.println(root.left);

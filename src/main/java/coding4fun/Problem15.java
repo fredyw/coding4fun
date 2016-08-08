@@ -12,7 +12,7 @@ import java.util.Set;
  */
 public class Problem15 {
     public static String findCommmonAncestor(String[] commitHashes, String[][] parentHashes,
-        String commitHash1, String commitHash2) {
+                                             String commitHash1, String commitHash2) {
         // the key is the commit hash, the value is the index
         // this is for fast lookup
         Map<String, Integer> commitMap = new HashMap<>();
@@ -28,7 +28,7 @@ public class Problem15 {
         getPaths(commitMap, parentHashes, commitHash2, accu2, paths);
         return getCommonAncestor(paths);
     }
-    
+
     private static String getCommonAncestor(List<List<String>> paths) {
         int size = Integer.MAX_VALUE;
         for (List<String> path : paths) {
@@ -52,10 +52,10 @@ public class Problem15 {
         }
         return result;
     }
-    
+
     private static void getPaths(Map<String, Integer> commitMap,
-        String[][] parentHashes, String commitHash, List<String> accu,
-        List<List<String>> result) {
+                                 String[][] parentHashes, String commitHash, List<String> accu,
+                                 List<List<String>> result) {
         int idx = commitMap.get(commitHash);
         String[] parent = parentHashes[idx];
         if (parent == null) {
@@ -72,10 +72,10 @@ public class Problem15 {
 
     public static void main(String[] args) {
         String[] commits = {"G", "F", "E", "D", "C", "B", "A"};
-        String[][] parents ={{"F","D"},{"E"}, {"B"}, {"C"}, {"B"}, {"A"}, null}; 
+        String[][] parents = {{"F", "D"}, {"E"}, {"B"}, {"C"}, {"B"}, {"A"}, null};
         String commit1 = "D";
         String commit2 = "F";
-        
+
         String result = findCommmonAncestor(commits, parents, commit1, commit2);
         System.out.println(result);
     }

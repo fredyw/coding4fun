@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Create an alternating iterator from a list of iterators.
- *
+ * <p>
  * <pre>
  * Input:
  * - Iterator 1: 0

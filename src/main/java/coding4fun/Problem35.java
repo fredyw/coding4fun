@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 
 /**
  * Given a string S and an integer K, rearrange the string such that similar characters are at least K distance apart.
- *
+ * <p>
  * <pre>
  * Input: S: AAABBBCC, K: 3
  * Output: [A, B, C, A, B, C, A, B]

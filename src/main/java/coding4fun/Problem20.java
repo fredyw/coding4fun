@@ -5,25 +5,25 @@ import java.util.stream.Collectors;
 
 /**
  * Build a relative path from the given source to the given destination.
- * 
+ * <p>
  * For simplicity, assume that the file path separator is always /
- *
+ * <p>
  * <pre>
  * Input:
  *   - Source     : /a/b/c/d/e
  *   - Destination: /a/b/f/x/y/z
  * Output: ../../../f/x/y/z
- * 
+ *
  * Input:
  *   - Source     : /a/b/c/d/e
  *   - Destination: /a/b/f
  * Output: ../../../f
- * 
+ *
  * Input:
  *   - Source     : /a/b/c
  *   - Destination: /x/y/z
  * Output: ../../../x/y/z
- * 
+ *
  * Input:
  *   - Source     : /a/b/c
  *   - Destination: /a/b/c
@@ -50,7 +50,7 @@ public class Problem20 {
         while (p1.equals(p2)) {
             srcPath.removeFirst();
             destPath.removeFirst();
-            
+
             if (srcPath.isEmpty() || destPath.isEmpty()) {
                 break;
             }
@@ -64,7 +64,7 @@ public class Problem20 {
         relativePath.append(destPath.stream().collect(Collectors.joining("/")));
         return relativePath.toString();
     }
-    
+
     public static void main(String[] args) {
         System.out.println(getRelativePath("/a/b/c/d/e", "/a/b/f/x/y/z"));
         System.out.println(getRelativePath("/a/b/c/d/e", "/a/b/f"));

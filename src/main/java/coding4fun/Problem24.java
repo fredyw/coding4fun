@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * Write an algorithm to perform a Tetris rotation.
- *
+ * <p>
  * <pre>
  * Input:
  * [ ,  ,  ]
@@ -26,7 +26,7 @@ import java.util.Arrays;
  * [ , *,  ]
  * [ , *,  ]
  * </pre>
- -----------------------------------------------------------
+ * -----------------------------------------------------------
  */
 public class Problem24 {
     public static char[][] rotate(char[][] block) {

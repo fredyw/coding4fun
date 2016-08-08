@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Implement a greatest common divisor.
- *
+ * <p>
  * <pre>
  * Input : 32 24
  * Output: 8
@@ -23,6 +23,7 @@ public class Problem30 {
         int c = a % b;
         return gcd(b, c);
     }
+
     public static void main(String[] args) {
         System.out.println(gcd(32, 24));
         System.out.println(gcd(3, 5));

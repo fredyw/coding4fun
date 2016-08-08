@@ -7,9 +7,9 @@ import java.util.Arrays;
  * Now, rearrange the elements so that the first k elements are the unique ones.
  * The remaining elements after those k don't matter (the number of each element can change).
  * Then return k.
- *
+ * <p>
  * The algorithm must be done in-place.
- *
+ * <p>
  * <pre>
  * Input : [1, 1, 2, 3, 3, 4, 4]
  * Output: [2, 1, 1, 3, 3, 4], k = 1
@@ -35,12 +35,12 @@ public class Problem23 {
                 continue;
             }
             // a unique number
-            if (right-left == 1) {
+            if (right - left == 1) {
                 swap(elements, left, k++);
             }
             left = right;
         }
-        if (right-left == 1) {
+        if (right - left == 1) {
             k++;
         }
         return k;

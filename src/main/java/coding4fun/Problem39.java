@@ -2,7 +2,7 @@ package coding4fun;
 
 /**
  * Find the maximum binary search subtree from a given binary tree.
- *
+ * <p>
  * <pre>
  * Input:
  *       1

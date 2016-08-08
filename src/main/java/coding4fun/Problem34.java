@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 
 /**
  * Implement an iterator where all elements are greater than k.
- *
+ * <p>
  * <pre>
  * Input: array = [1, 2, 5, 6, 7, 3, 4]
  *        k = 3

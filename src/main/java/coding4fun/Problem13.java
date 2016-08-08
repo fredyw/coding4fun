@@ -9,9 +9,9 @@ import java.util.Map;
  * <br/>
  * If there are multiple longest common prefix strings, you can return any
  * longest common prefix string.
- * 
+ * <p>
  * <pre>
- * Input:  bbbc 
+ * Input:  bbbc
  *         bbdda
  *         aaaabbb
  *         aaaabb
@@ -19,19 +19,19 @@ import java.util.Map;
  *         bbbbbcccde
  *         bbbbbcccdf
  * Output: bbbbbcccd
- * 
+ *
  * Input:  c
  * Output: c
- * 
+ *
  * Input:  a
  *         a
  *         c
  * Output: a
- * 
+ *
  * Input:  aca
  *         cba
  * Output: <empty string>
- * 
+ *
  * Input:  a
  * Output: a
  * </pre>
@@ -56,7 +56,7 @@ public class Problem13 {
                     node = node.children.get(chars[i]);
                     if (max <= i) {
                         max = i;
-                        lcp = s.substring(0, i+1);
+                        lcp = s.substring(0, i + 1);
                     }
                 } else {
                     Node newNode = new Node();
@@ -67,7 +67,7 @@ public class Problem13 {
         }
         return lcp;
     }
-    
+
     public static void main(String[] args) {
         System.out.println(modifiedLongestCommonPrefix(new String[]{
             "bbbc",
@@ -78,23 +78,23 @@ public class Problem13 {
             "bbbbbcccde",
             "bbbbbcccdf"
         }));
-        
+
         System.out.println(modifiedLongestCommonPrefix(new String[]{
             "c",
             "c"
         }));
-        
+
         System.out.println(modifiedLongestCommonPrefix(new String[]{
             "a",
             "a",
             "c"
         }));
-        
+
         System.out.println(modifiedLongestCommonPrefix(new String[]{
             "aca",
             "cba",
         }));
-        
+
         System.out.println(modifiedLongestCommonPrefix(new String[]{
             "a",
         }));

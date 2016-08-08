@@ -6,9 +6,9 @@ import java.util.Map;
 /**
  * Find the maximum subset of a tree from a given binary tree where the subset has the following
  * property:
- *
+ * <p>
  * Left child < parent < right child
- *
+ * <p>
  * <pre>
  * Input:
  *       1

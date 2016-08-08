@@ -19,16 +19,16 @@ public class Problem8 {
         }
         reverse(string, beginIdx, string.length);
     }
-    
+
     private static void reverse(char[] string, int beginIdx, int endIdx) {
         int mid = beginIdx + ((endIdx - beginIdx) / 2);
         for (int i = beginIdx, j = 0; i < mid; i++, j++) {
             char tmp = string[i];
-            string[i] = string[endIdx-1-j];
-            string[endIdx-1-j] = tmp;
+            string[i] = string[endIdx - 1 - j];
+            string[endIdx - 1 - j] = tmp;
         }
     }
-    
+
     public static void main(String[] args) {
         String str = "hi there programming is such a fun activity";
         char[] chrArray = str.toCharArray();

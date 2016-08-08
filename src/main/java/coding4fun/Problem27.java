@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Check if a binary search tree is valid.
- *
+ * <p>
  * <pre>
  * Input:
  *            5
@@ -122,7 +122,7 @@ public class Problem27 {
 
         node5.left = node3;
         node3.left = node1;
-        node3.right= node4;
+        node3.right = node4;
         node1.right = node2;
         node5.right = node8;
         node8.left = node7;
@@ -145,7 +145,7 @@ public class Problem27 {
 
         node5.left = node3;
         node3.left = node1;
-        node3.right= node6;
+        node3.right = node6;
         node1.right = node2;
         node5.right = node8;
         node8.left = node7;
@@ -168,7 +168,7 @@ public class Problem27 {
 
         node5.left = node3;
         node3.left = node1;
-        node3.right= node6;
+        node3.right = node6;
         node1.left = node2;
         node5.right = node8;
         node8.left = node7;
