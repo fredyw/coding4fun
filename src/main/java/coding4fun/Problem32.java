@@ -27,13 +27,11 @@ public class Problem32 {
         }
         for (int i = left; i < right; i++) {
             char tmp = chars[left];
-            ;
             chars[left] = chars[i];
             chars[i] = tmp;
             permutation(chars, left + 1, right);
             // backtrack to revert the original list
             tmp = chars[left];
-            ;
             chars[left] = chars[i];
             chars[i] = tmp;
         }
