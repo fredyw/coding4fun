@@ -21,26 +21,42 @@ package coding4fun;
  *
  * Input: [1, -2, -3, 0, 7, -8, -2]
  * Output: 112
+ *
+ * Input: []
+ * Output: 0
+ *
+ * Input: [-1]
+ * Output: -1
+ *
+ * Input: [0, 1, 2, -3, -4, 0]
+ * Output: 24
  * </pre>
  */
 public class Problem43 {
     private static int maxProductSubArray(int[] array) {
-        int max = 1;
-        int minProduct = 1;
-        int maxProduct = 1;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0) {
-                minProduct = Math.min(minProduct * array[i], 1);
-                maxProduct *= array[i];
-            } else if (array[i] == 0) {
-                minProduct = 1;
-                maxProduct = 1;
-            } else { // array[i] < 0
-                int tmp = maxProduct;
-                maxProduct = Math.max(minProduct * array[i], 1);
-                minProduct = tmp * array[i];
+        if (array.length == 0) {
+            return 0;
+        }
+        int max = array[0];
+        int maxSoFar = array[0];
+        // forward
+        for (int i = 1; i < array.length; i++) {
+            if (maxSoFar * array[i] == 0) {
+                maxSoFar = array[i];
+            } else {
+                maxSoFar *= array[i];
             }
-            max = Math.max(max, maxProduct);
+            max = Math.max(Math.max(maxSoFar, array[i]), max);
+        }
+        // backward
+        maxSoFar = array[array.length - 1];
+        for (int i = array.length - 2; i >= 0; i--) {
+            if (maxSoFar * array[i] == 0) {
+                maxSoFar = array[i];
+            } else {
+                maxSoFar *= array[i];
+            }
+            max = Math.max(Math.max(maxSoFar, array[i]), max);
         }
         return max;
     }
@@ -52,5 +68,8 @@ public class Problem43 {
         System.out.println(maxProductSubArray(new int[]{5, -4, 2, 3})); // 6
         System.out.println(maxProductSubArray(new int[]{1, -2, 3, -4, 5, -6})); // 360
         System.out.println(maxProductSubArray(new int[]{1, -2, -3, 0, 7, -8, -2})); // 112
+        System.out.println(maxProductSubArray(new int[]{})); // 0
+        System.out.println(maxProductSubArray(new int[]{-1})); // -1
+        System.out.println(maxProductSubArray(new int[]{0, 1, 2, -3, -4, 0})); // 24
     }
 }
