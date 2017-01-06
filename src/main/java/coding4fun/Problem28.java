@@ -66,6 +66,6 @@ public class Problem28 {
         System.out.println(tree.sumRange(1, 4)); // 24
         System.out.println(tree.sumRange(1, 1)); // 3
         System.out.println(tree.sumRange(0, 5)); // 36
-        System.out.println(tree.sumRange(0, 0)); // 0
+        System.out.println(tree.sumRange(0, 0)); // 1
     }
 }
