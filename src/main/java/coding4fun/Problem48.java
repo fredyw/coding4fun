@@ -52,7 +52,7 @@ import java.util.Stack;
  * ["a = b + c - e",
  *  "c = d + 1",
  *  "b = 5 * ( e + 5 )",
- *  "e = 100",
+ *  "e = 100"
  *  "d = e / ( 2 + 3 )"]
  * Variable: d
  *
@@ -156,7 +156,7 @@ public class Problem48 {
             "b = 5 * ( e + 5 )",
             "e = 100",
             "d = e / ( 2 + 3 )"
-        ))); // 451
+        ))); // 446
         System.out.println(evaluate("b", Arrays.asList(
             "a = b + c - e",
             "c = d + 1",

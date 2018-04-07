@@ -1,10 +1,12 @@
-.classpath
-.project
-.settings
-bin
-build
-.gradle
-*.swp
+# Gradle
+build/
+.gradle/
+
+# IntelliJ
 *.iml
 *.ipr
 *.iws
+out/
+
+# Vim
+*.swp
