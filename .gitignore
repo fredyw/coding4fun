@@ -2,11 +2,15 @@
 build/
 .gradle/
 
+# Vim
+*.swp
+
 # IntelliJ
 *.iml
 *.ipr
 *.iws
 out/
+.idea/
 
 # Vim
 *.swp
