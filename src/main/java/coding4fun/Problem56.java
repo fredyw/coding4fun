@@ -19,11 +19,36 @@ import java.util.List;
  *
  * Input : abc(de|fh|g(h|i))j
  * Output: [abcdej, abcfhj, abcghj, abcgij]
+ *
+ * Input : abc(de|fh|g(h|i))j(k|l)
+ * Output: [abcdejk, abcdejl, abcfhjk, abcfhjl, abcghjk, abcghjl, abcgijk, abcgijl]
+ *
+ * Input : abc(de|fh|g(h|i))j(k|l)m
+ * Output: [abcdejkm, abcdejlm, abcfhjkm, abcfhjlm, abcghjkm, abcghjlm, abcgijkm, abcgijlm]
  * </pre>
  */
 public class Problem56 {
     private static List<String> allStrings(String s) {
-        return allStrings(s, new IntRef());
+        IntRef ref = new IntRef();
+        List<String> allStrings = new ArrayList<>();
+        while (ref.val < s.length()) {
+            List<String> strings = allStrings(s, ref);
+            List<String> newString = new ArrayList<>();
+            if (allStrings.isEmpty()) {
+                allStrings = strings;
+            } else {
+                for (String a : allStrings) {
+                    for (String b : strings) {
+                        newString.add(a + b);
+                    }
+                }
+                allStrings = newString;
+            }
+            if (ref.val < s.length() && s.charAt(ref.val) == ')') {
+                ref.val++;
+            }
+        }
+        return allStrings;
     }
 
     private static List<String> allStrings(String s, IntRef ref) {
@@ -33,12 +58,11 @@ public class Problem56 {
             int i = ref.val;
             if (s.charAt(i) == '(') {
                 ref.val++;
-                strings.add(tmp);
                 List<String> allStrings = allStrings(s, ref);
                 for (String a : allStrings) {
                     strings.add(tmp + a);
                 }
-                tmp = "";
+                return strings;
             } else if (s.charAt(i) == '|') {
                 ref.val++;
                 strings.add(tmp);
@@ -56,10 +80,6 @@ public class Problem56 {
         }
         if (strings.isEmpty()) {
             strings.add(tmp);
-        } else {
-            for (int i = 0; i < strings.size(); i++) {
-                strings.set(i, strings.get(i) + tmp);
-            }
         }
         return strings;
     }
@@ -69,10 +89,11 @@ public class Problem56 {
     }
 
     public static void main(String[] args) {
-//        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
-//        System.out.println(allStrings("abc(de|fh|g(h|i))"));
-//        System.out.println(allStrings("abc(de|fh|g(h|i))j"));
-//        System.out.println(allStrings("abcdef"));
+        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))j"));
+        System.out.println(allStrings("abcdef"));
         System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)m"));
     }
 }
