@@ -2,42 +2,22 @@ package coding4fun;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
+/**
+ * Given a simple regular like-expression. Print all possible strings that match
+ * the expression.
+ *
+ * <pre>
+ * Input : abc(de|fh|g(h|i))
+ * Output: [abcde, abcfh, abcgh, abcgi]
+ *
+ * Input : abc(de|fh|g(h|i(jk|lm|mn))
+ * Output: [abcde, abcfh, abcgh, abcgijk, abcgilm, abcgimn]
+ * </pre>
+ */
 public class Problem56 {
     private static List<String> allStrings(String s) {
-        List<String> strings = new ArrayList<>();
-        Stack<List<String>> stack = new Stack<>();
-        String tmp = "";
-        List<String> tmpList = new ArrayList<>();
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
-                List<String> list = new ArrayList<>();
-                list.add(tmp);
-                stack.add(list);
-                System.out.println("storing: " + list);
-                tmp = "";
-            } else if (s.charAt(i) == '|') {
-//                System.out.println(tmp);
-//                tmp = stack.peek() + tmp;
-                for (String p : stack.peek()) {
-                    tmpList.add(p + tmp);
-                }
-                System.out.println("getting: " + tmpList);
-                tmp = "";
-            } else if (s.charAt(i) == ')') {
-                for (String p : stack.pop()) {
-
-                }
-//                System.out.println(tmp);
-                tmp = stack.pop() + tmp;
-                System.out.println("removing: " + tmp);
-//                tmp = "";
-            } else {
-                tmp += s.charAt(i);
-            }
-        }
-        return strings;
+        return allStrings(s, new IntRef());
     }
 
     private static List<String> allStrings(String s, IntRef ref) {
@@ -47,15 +27,22 @@ public class Problem56 {
             int i = ref.val;
             if (s.charAt(i) == '(') {
                 ref.val++;
-                allStrings(s, ref);
+                for (String a : allStrings(s, ref)) {
+                    strings.add(tmp + a);
+                }
+                ref.val++;
+                tmp = "";
             } else if (s.charAt(i) == '|') {
-
+                ref.val++;
+                strings.add(tmp);
+                tmp = "";
             } else if (s.charAt(i) == ')') {
-
+                ref.val++;
+                strings.add(tmp);
                 return strings;
             } else {
-                tmp += s.charAt(i);
                 ref.val++;
+                tmp += s.charAt(i);
             }
         }
         return strings;
@@ -66,6 +53,8 @@ public class Problem56 {
     }
 
     public static void main(String[] args) {
-        System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
+        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))"));
+//        System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
     }
 }
