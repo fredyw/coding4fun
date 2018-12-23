@@ -13,6 +13,12 @@ import java.util.List;
  *
  * Input : abc(de|fh|g(h|i(jk|lm|mn))
  * Output: [abcde, abcfh, abcgh, abcgijk, abcgilm, abcgimn]
+ *
+ * Input : abcdef
+ * Output: [abcdef]
+ *
+ * Input : abc(de|fh|g(h|i))j
+ * Output: [abcdej, abcfhj, abcghj, abcgij]
  * </pre>
  */
 public class Problem56 {
@@ -27,10 +33,11 @@ public class Problem56 {
             int i = ref.val;
             if (s.charAt(i) == '(') {
                 ref.val++;
-                for (String a : allStrings(s, ref)) {
+                strings.add(tmp);
+                List<String> allStrings = allStrings(s, ref);
+                for (String a : allStrings) {
                     strings.add(tmp + a);
                 }
-                ref.val++;
                 tmp = "";
             } else if (s.charAt(i) == '|') {
                 ref.val++;
@@ -38,11 +45,20 @@ public class Problem56 {
                 tmp = "";
             } else if (s.charAt(i) == ')') {
                 ref.val++;
-                strings.add(tmp);
+                if (!tmp.isEmpty()) {
+                    strings.add(tmp);
+                }
                 return strings;
             } else {
                 ref.val++;
                 tmp += s.charAt(i);
+            }
+        }
+        if (strings.isEmpty()) {
+            strings.add(tmp);
+        } else {
+            for (int i = 0; i < strings.size(); i++) {
+                strings.set(i, strings.get(i) + tmp);
             }
         }
         return strings;
@@ -53,8 +69,10 @@ public class Problem56 {
     }
 
     public static void main(String[] args) {
-        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
-        System.out.println(allStrings("abc(de|fh|g(h|i))"));
-//        System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
+//        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
+//        System.out.println(allStrings("abc(de|fh|g(h|i))"));
+//        System.out.println(allStrings("abc(de|fh|g(h|i))j"));
+//        System.out.println(allStrings("abcdef"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
     }
 }
