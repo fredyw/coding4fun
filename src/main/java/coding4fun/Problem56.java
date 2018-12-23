@@ -34,6 +34,9 @@ public class Problem56 {
         while (ref.val < s.length()) {
             List<String> strings = allStrings(s, ref);
             List<String> newString = new ArrayList<>();
+            if (strings.isEmpty()) {
+                continue;
+            }
             if (allStrings.isEmpty()) {
                 allStrings = strings;
             } else {
@@ -43,9 +46,6 @@ public class Problem56 {
                     }
                 }
                 allStrings = newString;
-            }
-            if (ref.val < s.length() && s.charAt(ref.val) == ')') {
-                ref.val++;
             }
         }
         return allStrings;
@@ -89,10 +89,10 @@ public class Problem56 {
     }
 
     public static void main(String[] args) {
-        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
         System.out.println(allStrings("abc(de|fh|g(h|i))"));
-        System.out.println(allStrings("abc(de|fh|g(h|i))j"));
+        System.out.println(allStrings("abc(de|fh|g(h|i(jk|lm|mn))"));
         System.out.println(allStrings("abcdef"));
+        System.out.println(allStrings("abc(de|fh|g(h|i))j"));
         System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)"));
         System.out.println(allStrings("abc(de|fh|g(h|i))j(k|l)m"));
     }
